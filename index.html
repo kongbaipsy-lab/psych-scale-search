@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>心理测评量表查询</title>
-<!-- BUILD: FULL-AUDIT-FINAL-20260903 -->
+<!-- BUILD: FULL-AUDIT-FINAL-LAYOUT-20260903 -->
 
 
 <style>
@@ -102,6 +102,43 @@ button{
   .tag{font-size:16px}
   .info{font-size:18px}
 }
+
+/* FINAL-LAYOUT-20260903: 双名称信息尽量单行显示 */
+.info{
+  grid-template-columns:minmax(155px, 36%) minmax(0, 64%) !important;
+  column-gap:16px !important;
+  align-items:start;
+}
+.info .k{
+  white-space:nowrap;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+.info > div:not(.k){
+  word-break:normal;
+  overflow-wrap:anywhere;
+}
+@media (max-width:520px){
+  .info{
+    grid-template-columns:170px minmax(0,1fr) !important;
+    column-gap:12px !important;
+  }
+  .info .k{
+    font-size:20px;
+    letter-spacing:-0.4px;
+  }
+}
+@media (max-width:390px){
+  .info{
+    grid-template-columns:150px minmax(0,1fr) !important;
+    column-gap:10px !important;
+  }
+  .info .k{
+    font-size:19px;
+    letter-spacing:-0.5px;
+  }
+}
+
 </style>
 
 </head>
